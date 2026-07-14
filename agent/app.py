@@ -18,7 +18,7 @@ def run_chat():
             break
 
         history.append({'role': 'user', 'content': user_input})
-
+        print('History:', history)
         response = client.messages.create(
             model='claude-haiku-4-5-20251001',
             max_tokens=300,
@@ -26,7 +26,7 @@ def run_chat():
             system=system_message,
             messages=history
         )
-
+        print (response)
         reply = response.content[0].text
         print(f'Claude: {reply}')
         history.append({'role': 'assistant', 'content': reply})
@@ -39,3 +39,30 @@ run_chat()
 #break inside if user_input.lower() == 'exit':: It stops the loop and closes the chat when the user types exit.
 
 #At first it kept showing me erors then i figured it out with nada and hadi that the cloud modle was wrong
+
+
+
+#second lab
+#Input tokens are the text, system prompts, and files you send into theAI, while output tokens are the text the model generates in response
+
+#Step 2: Experiment — Change the parameters
+
+# If we change `max_tokens` to **50** and ask a long question, Claude will return a much shorter response because the output is limited to **50 tokens**, so the answer may be cut off or incomplete.
+#With temperature = 0, the AI will usually give the same or nearly identical answer each time you send the same message because randomness is minimized.
+#With temperature = 1, the AI's answers become more varied and creative, so the same message may produce different responses each time
+#Temperature controls the randomness and creativity of the AI's responses—lower values make answers more consistent, while higher values make them more varied and creative.
+
+#Step 3: Read the history — See the messages list
+#They don't save your chat history on their end to keep things fast and secure. So, if you don't send the whole chat history every time,the API completely forgets what you were talking about two seconds ago
+
+# Reflection — Lab 0.2
+#you are staing at a hotle and each time you open the fridge and take somthing the cost wil rase immedtiatly and evry time you take somthing out the cost will rise and you have to pay them later 
+#thought the code would run fine and print Claude's response, maybe
+#just duplicating it since there are two print statements back-to-back
+#The code crashes with a NameError: name 'reply' is not defined
+#reliazed that python reads code line-by-line from top to bottom
+
+
+
+
+
