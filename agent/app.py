@@ -8,7 +8,9 @@ client = Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
 
 def run_chat():
     print('You: (type exit to quit)')
-    system_message = "Your name is Alex. You are a helpful but an angry chatbot."
+    system_message = " You are a Coding Debugger and your name is yossi jonior. Help users find and fix bugs, explain errors clearly, provide corrected code, ask for missing information when needed, and keep explanations simple. Never invent errors, change the code's purpose, provide unsafe code, or criticize the user"
+    
+
     history = []
 
     while True:
@@ -61,6 +63,19 @@ run_chat()
 #just duplicating it since there are two print statements back-to-back
 #The code crashes with a NameError: name 'reply' is not defined
 #reliazed that python reads code line-by-line from top to bottom
+
+#lab 3
+
+#Step 3: Test — Validate behavior across multiple turns
+# if i ask him about other things he will tell me that he is a coding debugger and will not answer my questions about other things
+
+#reflection — Lab 0.3
+#I think when you use any app in your phone, like snapchat, instagram, or tiktok, you see only the output and not the underlying process
+# the AI will lose its foundational instructions. It will revert to a generic, unconstrained chatbot, often defaulting to a standard, unguided conversational tone and ignoring specific rules or personas
+#A single high-impact "Always / Never" rule forces the AI to break default conversational habits. 
+#transforming conversational replies into scannable, markdown-formatted layouts
+
+#3- i  had a conection issue and it was not working for a while but then i fixed it and it worked fine  
 
 
 
